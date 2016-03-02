@@ -73,6 +73,18 @@ import static org.jooq.lambda.tuple.Tuple.tuple;
 public class PipelineInterpreter implements MessageProcessor {
     private static final Logger log = LoggerFactory.getLogger(PipelineInterpreter.class);
 
+    public static class Descriptor implements MessageProcessor.Descriptor {
+        @Override
+        public String name() {
+            return "Processing Pipeline Interpreter";
+        }
+
+        @Override
+        public String className() {
+            return PipelineInterpreter.class.getCanonicalName();
+        }
+    }
+
     private final RuleSourceService ruleSourceService;
     private final PipelineSourceService pipelineSourceService;
     private final PipelineStreamAssignmentService pipelineStreamAssignmentService;

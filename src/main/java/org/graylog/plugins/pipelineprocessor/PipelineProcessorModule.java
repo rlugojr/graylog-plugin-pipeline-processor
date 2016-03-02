@@ -37,7 +37,7 @@ public class PipelineProcessorModule extends PluginModule {
     @Override
     protected void configure() {
         //addMessageProcessor(NaiveRuleProcessor.class);
-        addMessageProcessor(PipelineInterpreter.class);
+        addMessageProcessor(PipelineInterpreter.class, PipelineInterpreter.Descriptor.class);
         addRestResource(RuleResource.class);
         addRestResource(PipelineResource.class);
         addRestResource(PipelineStreamResource.class);
